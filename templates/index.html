@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Classifier</title>
+</head>
+<body>
+    <h1>Welcome to the Spam Classifier!</h1>
+    <p>This page will show you the results of your spam classification.</p>
+
+    <form action="/predict" method="POST">
+        <label for="message">Enter a message:</label>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+        <button type="submit">Classify as Spam or Not Spam</button>
+    </form>
+
+    {% if result %}
+        <h2>Prediction: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
